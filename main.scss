@@ -1,0 +1,105 @@
+@import "mixin";
+@import "var";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+
+.main_header{
+    @include flexprob;
+    background-color: $bg-color;
+    &:hover{
+        background-color: $hover-background ;
+        cursor: pointer;
+    }
+    h1{
+        color: $primary-color;
+        font-size: $font-size;
+        @include commoncode(0.1rem, uppercase);
+        &:hover{
+            color: green;
+        }
+        &::after{
+            content: "-day";
+        }
+    }
+
+    p{
+        color: black;
+        font-size: $font-size2;
+        @include commoncode(0.3rem, uppercase);
+        &:hover{
+            color:rgb(120, 8, 231);
+            cursor: pointer;
+        }
+        &::after{
+            content: "English News Paper";
+        }
+    }
+}
+
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  
+    li { 
+        display: inline-block;
+        font-size:30px;
+        color:#000000;
+        padding: 5px;
+        &:hover{
+            color:#2755a5;
+            padding: auto;
+            margin: auto;
+            font-weight: bold;
+            font-size: $nav-font-size;
+            font-family: 100% $font-family ;
+            width: fit-content;
+        }
+     }
+  
+    a {
+      @include commonnav(inline-block, 6px, none);
+    }
+}
+
+.btn {
+   @include btn;
+}
+
+.btn-danger {
+    @extend .btn;
+    background-color: red;
+    color : #ffffff;
+    margin: 0;
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    margin-right: 22px;
+    margin-bottom: 6%
+}
+.btn-success{
+    @extend .btn ;
+    background-color: green;
+    color : white; 
+    margin: 0;
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    margin-right: -155px;
+    margin-bottom: 6%
+}
+.parent{
+    h1{
+        text-align: center;
+        padding: 10px;
+    }
+}
